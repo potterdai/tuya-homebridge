@@ -17,7 +17,8 @@ class LogUtil {
 }
 
 function prependTimestamp(args) {
-    return ['[' + (new Date()).toISOString() + ']', ...args];
-};
+    args[0] = '[' + (new Date()).toISOString() + '] ' + args[0]
+    return  args;
+}
 
 module.exports = LogUtil;
